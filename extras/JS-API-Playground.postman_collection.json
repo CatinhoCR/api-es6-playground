@@ -690,7 +690,7 @@
 								},
 								{
 									"key": "artist",
-									"value": "5da056eb2cc94c5c29967bfe",
+									"value": "5f6eee38bec06ab45f60d0e9",
 									"type": "text"
 								}
 							]
@@ -989,7 +989,7 @@
 								},
 								{
 									"key": "album",
-									"value": "5da057692cc94c5c29967bff",
+									"value": "5f6eee60bec06ab45f60d0ea",
 									"type": "text"
 								}
 							]
@@ -1199,7 +1199,7 @@
 	],
 	"variable": [
 		{
-			"id": "bd689fc2-8423-4011-bc00-954fe84be591",
+			"id": "daffaae7-5248-4377-88e1-4d1d44255080",
 			"key": "URL",
 			"value": "http://localhost:8000/api"
 		}
