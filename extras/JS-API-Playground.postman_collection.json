@@ -1,0 +1,1208 @@
+{
+	"info": {
+		"_postman_id": "8adf4043-a24b-4095-bee2-c6aa171fd076",
+		"name": "JS-API-Playground",
+		"description": "Sample REST API for JS-API-Playground project to refresh concepts, practice & study Express and ES6 at frontend and for a sample portfolio showcase.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "Cato506",
+									"type": "text"
+								},
+								{
+									"key": "fullname",
+									"value": "Andrés Castillo Quesada",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "cato@microgardenmusic.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "puravida123",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "isActive",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}register",
+							"host": [
+								"{{url}}register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}user/5f6ed4a068520aa603c975d2",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"5f6ed4a068520aa603c975d2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "cato@microgardenmusic.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "puravida123",
+									"type": "text"
+								},
+								{
+									"key": "getHash",
+									"value": "true",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}login",
+							"host": [
+								"{{url}}login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "cato@aol.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "hola",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3977/api/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3977",
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "239"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ef-fx1UGm6kiyDUn5oQXjRA3oRngM0\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 09 Jul 2019 07:43:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user\": {\n        \"_id\": \"5d24451b06e847320a4a1c55\",\n        \"name\": \"Andres Castillo\",\n        \"surname\": \"Catowl\",\n        \"email\": \"cato@castilloquesada.com\",\n        \"role\": \"ADMIN_ROLE\",\n        \"image\": \"null\",\n        \"password\": \"$2a$10$PShMfc4ZAb.3ZtgXCmmhOOpXqMknIlFyTE.L/qGTmC.Dijd/OQfJq\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "Cato",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "fullname",
+									"value": "EsCato",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345611",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "cato@microgardenmusic.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "image",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "isActive",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "role",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}update-user/5f6ed4a068520aa603c975d2",
+							"host": [
+								"{{url}}update-user"
+							],
+							"path": [
+								"5f6ed4a068520aa603c975d2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload User Image",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"contentType": "",
+									"type": "file",
+									"src": "/Users/cato/Documents/esCato/selected/IMG_9725.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}upload-image-user/5d9c6682582f68475b7b9e63",
+							"host": [
+								"{{url}}upload-image-user"
+							],
+							"path": [
+								"5d9c6682582f68475b7b9e63"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Image",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}get-image-user/Dk4ZryiRR4i3h6gPLZPAEFT1.jpg",
+							"host": [
+								"{{url}}get-image-user"
+							],
+							"path": [
+								"Dk4ZryiRR4i3h6gPLZPAEFT1.jpg"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "filterBy",
+									"value": "role",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}users",
+							"host": [
+								"{{url}}users"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Artists",
+			"item": [
+				{
+					"name": "Get Artist",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}artist/5da056eb2cc94c5c29967bfe",
+							"host": [
+								"{{url}}artist"
+							],
+							"path": [
+								"5da056eb2cc94c5c29967bfe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Artists",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{auth}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "perPage",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}artists/1",
+							"host": [
+								"{{url}}artists"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save Artist",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Cato",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "DJ & Producer. Founding member of Microgarden Music and Nomads Music.",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}artist/",
+							"host": [
+								"{{url}}artist"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Artist",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Andy Dlao",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "DJ parte de IRLV y Microgarden.",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}artist/5d9dacd4c37c645aad1503d4",
+							"host": [
+								"{{url}}artist"
+							],
+							"path": [
+								"5d9dacd4c37c645aad1503d4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}artist/5d9dacccc37c645aad1503d3",
+							"host": [
+								"{{url}}artist"
+							],
+							"path": [
+								"5d9dacccc37c645aad1503d3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload Artist Image",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{auth}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"contentType": "",
+									"type": "file",
+									"src": "/Users/cato/Documents/Nomads/chosenPics/c1.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}upload-image-artist/5da056eb2cc94c5c29967bfe",
+							"host": [
+								"{{url}}upload-image-artist"
+							],
+							"path": [
+								"5da056eb2cc94c5c29967bfe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Artist Image",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}get-image-artist/xIJBIlLJ4VqVWDhJymxyJ3Ph.jpg",
+							"host": [
+								"{{url}}get-image-artist"
+							],
+							"path": [
+								"xIJBIlLJ4VqVWDhJymxyJ3Ph.jpg"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Albums",
+			"item": [
+				{
+					"name": "Save Album",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{auth}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Let me begin with...",
+									"type": "text"
+								},
+								{
+									"key": "year",
+									"value": "2019",
+									"type": "text"
+								},
+								{
+									"key": "genre",
+									"value": "Deep House",
+									"type": "text"
+								},
+								{
+									"key": "label",
+									"value": "Microgarden Music",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Cato's first released EP",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "artist",
+									"value": "5da056eb2cc94c5c29967bfe",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}album/",
+							"host": [
+								"{{url}}album"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Album",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}album/5da057692cc94c5c29967bff",
+							"host": [
+								"{{url}}album"
+							],
+							"path": [
+								"5da057692cc94c5c29967bff"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Albums",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}albums/5da056eb2cc94c5c29967bfe",
+							"host": [
+								"{{url}}albums"
+							],
+							"path": [
+								"5da056eb2cc94c5c29967bfe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Album",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Are we working out YET?",
+									"type": "text"
+								},
+								{
+									"key": "year",
+									"value": "2019",
+									"type": "text"
+								},
+								{
+									"key": "genre",
+									"value": "Unknown",
+									"type": "text"
+								},
+								{
+									"key": "label",
+									"value": "Catatonga",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Wtf this is we dont know, but its good.",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "artist",
+									"value": "5d246b03fe768a355728277e",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}album/5d9dbeb3f4979b5d7374ef3a",
+							"host": [
+								"{{url}}album"
+							],
+							"path": [
+								"5d9dbeb3f4979b5d7374ef3a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Album",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{auth}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}album/5da033640093107344ef731e",
+							"host": [
+								"{{url}}album"
+							],
+							"path": [
+								"5da033640093107344ef731e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload Album Image",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{auth}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"contentType": "",
+									"type": "file",
+									"src": "/Users/cato/Downloads/patrick-fore-cvfv_hxr0-M-unsplash.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}upload-image-album/5da057692cc94c5c29967bff",
+							"host": [
+								"{{url}}upload-image-album"
+							],
+							"path": [
+								"5da057692cc94c5c29967bff"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Album Image",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{auth}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}get-image-album/tJSEaMpTMf_Vg7WtdhWMDH3W.jpg",
+							"host": [
+								"{{url}}get-image-album"
+							],
+							"path": [
+								"tJSEaMpTMf_Vg7WtdhWMDH3W.jpg"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Songs",
+			"item": [
+				{
+					"name": "Get Song",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}song/5da058512cc94c5c29967c00",
+							"host": [
+								"{{url}}song"
+							],
+							"path": [
+								"5da058512cc94c5c29967c00"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save Song",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{auth}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Something for myself",
+									"type": "text"
+								},
+								{
+									"key": "duration",
+									"value": "8:10",
+									"type": "text"
+								},
+								{
+									"key": "genre",
+									"value": "Minimal",
+									"type": "text"
+								},
+								{
+									"key": "number",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "releaseYear",
+									"value": "2019",
+									"type": "text"
+								},
+								{
+									"key": "bpm",
+									"value": "126",
+									"type": "text"
+								},
+								{
+									"key": "album",
+									"value": "5da057692cc94c5c29967bff",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}song/",
+							"host": [
+								"{{url}}song"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Songs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}songs/5da057692cc94c5c29967bff",
+							"host": [
+								"{{url}}songs"
+							],
+							"path": [
+								"5da057692cc94c5c29967bff"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Song",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Sleep early... Wake up with the sun",
+									"type": "text"
+								},
+								{
+									"key": "duration",
+									"value": "6:38",
+									"type": "text"
+								},
+								{
+									"key": "genre",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "number",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "releaseYear",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "bpm",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "file",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "album",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}song/5d9dc8abe3b3a8603c5cb98b",
+							"host": [
+								"{{url}}song"
+							],
+							"path": [
+								"5d9dc8abe3b3a8603c5cb98b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Song",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}song/5da0386865466373d8376f92",
+							"host": [
+								"{{url}}song"
+							],
+							"path": [
+								"5da0386865466373d8376f92"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload File",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/cato/Downloads/Andre Butano & Demian Muller - Frente (Proudly People Remix) [Posay Music].mp3"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}upload-song/5da058512cc94c5c29967c00",
+							"host": [
+								"{{url}}upload-song"
+							],
+							"path": [
+								"5da058512cc94c5c29967c00"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Song File",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{auth}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}get-song/tFkgmCA8SuL9aspiVqpUWHoS.mp3",
+							"host": [
+								"{{url}}get-song"
+							],
+							"path": [
+								"tFkgmCA8SuL9aspiVqpUWHoS.mp3"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Collectives",
+			"item": [],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"variable": [
+		{
+			"id": "bd689fc2-8423-4011-bc00-954fe84be591",
+			"key": "URL",
+			"value": "http://localhost:8000/api"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

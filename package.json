@@ -1,0 +1,39 @@
+{
+  "name": "rest-api-js-playground",
+  "version": "1.0.0",
+  "description": "Just a sample express mock API to practice some vanilla JS in a playground setup",
+  "main": "src/app.js",
+  "scripts": {
+    "serve": "nodemon src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "git+ssh://git@github.com/CatinhoCR/api-js-playground.git",
+  "keywords": [
+    "express"
+  ],
+  "author": "Cato@castilloquesada,com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CatinhoCR/api-js-playground/issues"
+  },
+  "homepage": "https://github.com/CatinhoCR/api-js-playground#readme",
+  "private": true,
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.19.0",
+    "connect-multiparty": "^2.2.0",
+    "express": "^4.17.1",
+    "jwt-simple": "^0.5.6",
+    "moment": "^2.29.0",
+    "mongoose": "^5.10.7",
+    "mongoose-pagination": "^1.0.0",
+    "rimraff": "0.0.1-security"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "mongodb": "^3.6.2",
+    "nodemon": "^2.0.4"
+  }
+}
