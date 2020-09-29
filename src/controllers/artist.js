@@ -1,14 +1,14 @@
 'use strict'
 
-var fs = require('fs')
-var path = require('path')
-var mongoosePaginate = require('mongoose-pagination')
-var Artist = require('../models/artist')
-var Album = require('../models/album')
-var Song = require('../models/song')
+const fs = require('fs')
+const path = require('path')
+const mongoosePaginate = require('mongoose-pagination')
+const Artist = require('../models/artist')
+const Album = require('../models/album')
+const Song = require('../models/song')
 
 function getArtist(req, res) {
-  var artistId = req.params.id
+  const artistId = req.params.id
   console.log('Z0')
   Artist.findById(artistId, (err, artist) => {
     if (err) {
@@ -24,13 +24,14 @@ function getArtist(req, res) {
 }
 
 function getArtists(req, res) {
-  if (req.params.page) {
-    var page = req.params.page
-  } else {
-    var page = 1
-  }
+  const page = req.params.page ? req.params.page : 1;
+  // if (req.params.page) {
+  //   page = req.params.page
+  // } else {
+  //   page = 1
+  // }
 
-  var itemsPerPage = Number(req.body.perPage)
+  const itemsPerPage = Number(req.body.perPage)
 
   Artist.find()
     .sort('name')
@@ -51,11 +52,12 @@ function getArtists(req, res) {
 }
 
 function saveArtist(req, res) {
-  var artist = new Artist()
+  const artist = new Artist()
 
-  var params = req.body
+  const params = req.body
   artist.name = params.name
   artist.description = params.description
+  artist.collective = params.collective
   artist.image = 'null'
 
   artist.save((err, artistStored) => {
@@ -75,8 +77,8 @@ function saveArtist(req, res) {
 }
 
 function updateArtist(req, res) {
-  var artistId = req.params.id
-  var update = req.body
+  const artistId = req.params.id
+  const update = req.body
 
   Artist.findByIdAndUpdate(artistId, update, (err, artistUpdated) => {
     if (err) {
@@ -97,7 +99,7 @@ function updateArtist(req, res) {
 
 // Deletes artist, and their albums and songs too
 function deleteArtist(req, res) {
-  var artistId = req.params.id
+  const artistId = req.params.id
 
   Artist.findByIdAndRemove(artistId, (err, artistRemoved) => {
     if (err) {
@@ -152,16 +154,16 @@ function deleteArtist(req, res) {
 }
 
 function uploadAImage(req, res) {
-  var artistId = req.params.id
-  var file_name = 'No subido...'
+  const artistId = req.params.id
+  const file_name = 'No subido...'
 
   if (req.files) {
-    var file_path = req.files.image.path
-    var file_split = file_path.split('/')
-    var file_name = file_split[2]
+    const file_path = req.files.image.path
+    const file_split = file_path.split('/')
+    const file_name = file_split[2]
 
-    var ext_split = file_name.split('.')
-    var file_ext = ext_split[1]
+    const ext_split = file_name.split('.')
+    const file_ext = ext_split[1]
 
     if (file_ext == 'png' || file_ext == 'jpg' || file_ext == 'gif') {
       Artist.findByIdAndUpdate(
@@ -194,8 +196,8 @@ function uploadAImage(req, res) {
 }
 
 function getAImageFile(req, res) {
-  var imageFile = req.params.imageFile
-  var path_file = './uploads/artists/' + imageFile
+  const imageFile = req.params.imageFile
+  const path_file = './uploads/artists/' + imageFile
 
   fs.exists(path_file, function (exists) {
     if (exists) {
