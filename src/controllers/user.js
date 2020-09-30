@@ -124,11 +124,12 @@ function loginUser(req, res) {
                 token: jwt.createToken(user),
               })
             } else {
+              // NOTE: This is only for testing purposes ofc.. not production smart EVER
               res.status(200).send({ user })
             }
           } else {
             // wrong password
-            res.status(404).send({ message: 'La contraseña no es correcta.' })
+            res.status(404).send({ error: err, message: 'Usuario y/o contraseña incorrectos.' })
           }
         })
       }

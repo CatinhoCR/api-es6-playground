@@ -1,6 +1,7 @@
 'use strict'
 
 const express = require('express')
+const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 
 const app = express()
@@ -8,6 +9,7 @@ const app = express()
 // configs
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
+// app.use(cookieParser())
 
 // cargar rutas
 var user_routes = require('./routes/user')
