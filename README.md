@@ -18,10 +18,7 @@ Sample playground for creating and testing an API with express.js, and consume f
 - Use the Register endpoint to create a new user, then login with your credentials.
 - The login endpoint response will return a token. For now, you need to add this to your environment's variables (Postman) as `value` to the `authentication` key.
 
-### TODO
-
-- Songs, artists, Albums, Collectives controllers, models, etc.
-- Better user handling for security and automatization of token etc.
+### TODO:
 
 **Add better script habdling npm, this is a basic example for ideas whenever:**
 

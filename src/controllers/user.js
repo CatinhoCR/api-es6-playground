@@ -46,7 +46,7 @@ function getAllUsers(req, res) {
   })
 }
 
-function saveUser(req, res) {
+async function saveUser(req, res) {
   const user = new User()
   let params = req.body
 
@@ -129,12 +129,51 @@ function loginUser(req, res) {
             }
           } else {
             // wrong password
-            res.status(404).send({ error: err, message: 'Usuario y/o contraseña incorrectos.' })
+            res
+              .status(404)
+              .send({
+                error: err,
+                message: 'Usuario y/o contraseña incorrectos.',
+              })
           }
         })
       }
     }
   })
+}
+
+async function deleteUser(req, res) {
+  const userId = req.params.id
+
+  User.findByIdAndRemove(userId, (err, userRemoved) => {
+    if (err) {
+      res.status(500).send({ message: 'No se pudo borrar el usuario.' })
+    } else {
+      res.status(200).send({
+        message: 'éxito se borró',
+        user: userRemoved,
+      })
+    }
+  })
+  // try {
+  //   if (!userId) {
+  //     res.status(403).send({ message: 'Ingrese un usuario. ' })
+  //   } else {
+  //     User.findOne({ _id: userId }, (err, user) => {
+  //       if (err) {
+  //         res.status(500).send({ message: 'Error en la petición al server.' })
+  //       } else {
+  //         if (!user) {
+  //           res.status(404).send({ message: 'El usuario no existe.' })
+  //         } else {
+  //           res.status(200).send({ user: user })
+  //         }
+  //       }
+  //     })
+  //   }
+  // } catch {
+  //   // error
+  // }
 }
 
 function updateUser(req, res) {
@@ -242,7 +281,8 @@ module.exports = {
   getAllUsers,
   saveUser,
   loginUser,
+  deleteUser,
   updateUser,
   uploadImage,
-  getImageFile
+  getImageFile,
 }

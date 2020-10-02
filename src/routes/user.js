@@ -12,6 +12,7 @@ api.get('/user/:id', md_auth.ensureAuth, UserCtrl.getUser)
 api.get('/users', md_auth.ensureAuth, UserCtrl.getAllUsers)
 api.post('/register', UserCtrl.saveUser)
 api.post('/login', UserCtrl.loginUser)
+api.delete('/delete-user/:id', md_auth.ensureAuth, UserCtrl.deleteUser)
 // este parametro de ruta (:id) podria ser opcional (:id?), dado que ya estamos enviando el ensureAuth method del servicio/middleware y por esa razón, ya tenemos el token.
 api.put('/update-user/:id', md_auth.ensureAuth, UserCtrl.updateUser)
 api.post(
