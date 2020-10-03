@@ -60,7 +60,10 @@
 									"type": "text",
 									"disabled": true
 								}
-							]
+							],
+							"options": {
+								"urlencoded": {}
+							}
 						},
 						"url": {
 							"raw": "{{url}}register",
@@ -381,6 +384,38 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{url}}delete-user/5f782a152a84035e1ec329d9",
+							"host": [
+								"{{url}}delete-user"
+							],
+							"path": [
+								"5f782a152a84035e1ec329d9"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -400,12 +435,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{url}}artist/5da056eb2cc94c5c29967bfe",
+							"raw": "{{url}}artist/5f6eee38bec06ab45f60d0e9",
 							"host": [
 								"{{url}}artist"
 							],
 							"path": [
-								"5da056eb2cc94c5c29967bfe"
+								"5f6eee38bec06ab45f60d0e9"
 							]
 						}
 					},
@@ -436,7 +471,7 @@
 							"urlencoded": [
 								{
 									"key": "perPage",
-									"value": "2",
+									"value": "3",
 									"type": "text"
 								}
 							]
@@ -1199,7 +1234,7 @@
 	],
 	"variable": [
 		{
-			"id": "daffaae7-5248-4377-88e1-4d1d44255080",
+			"id": "dee81151-b047-40fb-b826-9b1ae1762b83",
 			"key": "URL",
 			"value": "http://localhost:8000/api"
 		}
