@@ -5,30 +5,22 @@ Sample playground for creating and testing an API with express.js, and consume f
 ## Dependencies
 
 - Node (NPM)
-- MongoDB
+- MongoDB (Will soon add option to use local fake JSON mocked-data)
 
 ## Installation
 
-- Clone this, then run `npm install` on the root folder.
+- Clone, then run `npm install`.
+- Create a `.env` file at the root folder and add these: (Make sure your local URL matches.. Token secretes can be w/e for now and feel free to change the port to ur prefered dev flow)
+
+```nodejs
+MONGO_LOCAL_CONN_URL=mongodb://127.0.0.1:27017/
+MONGO_DB_NAME=<your_local_db>
+ACCESS_TOKEN_SECRET=addjsonwebtokensecretherelikeQuiscustodietipsoscustodes
+REFRESH_TOKEN_SECRET=notsosecret
+PORT=8000
+```
 
 ## Usage
 
-- Basic initial implementantion. The `extras` folder in the root has the Postman Environment & Collection to import.
-- Check the `src/env/constants.js` file and change any value needed to match your local setup.
-- Use the Register endpoint to create a new user, then login with your credentials.
-- The login endpoint response will return a token. For now, you need to add this to your environment's variables (Postman) as `value` to the `authentication` key.
-
-### TODO:
-
-**Add better script habdling npm, this is a basic example for ideas whenever:**
-
-```bash
-  "express-jwt": "^6.0.0",
-```
-
-```bash
-"build": "babel src/app.js -d dist/app.js",
-"start": "npm run build && node dist",
-"restart": "rimraf dist && npm run start",
-"dev": "nodemon --exec npm run restart",
-```
+Fow now, simply run `npm run dev`.
+**Note:** `clean` and `start` scripts are added but not functional yet, will be extended once production env workflow is added.
