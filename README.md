@@ -23,6 +23,10 @@ Sample playground for creating and testing an API with express.js, and consume f
 **Add better script habdling npm, this is a basic example for ideas whenever:**
 
 ```bash
+  "express-jwt": "^6.0.0",
+```
+
+```bash
 "build": "babel src/app.js -d dist/app.js",
 "start": "npm run build && node dist",
 "restart": "rimraf dist && npm run start",
