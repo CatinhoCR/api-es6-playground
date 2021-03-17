@@ -60,10 +60,7 @@
 									"type": "text",
 									"disabled": true
 								}
-							],
-							"options": {
-								"urlencoded": {}
-							}
+							]
 						},
 						"url": {
 							"raw": "{{url}}register",
@@ -417,8 +414,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Artists",
@@ -477,12 +473,12 @@
 							]
 						},
 						"url": {
-							"raw": "{{url}}artists/1",
+							"raw": "{{url}}artists/",
 							"host": [
 								"{{url}}artists"
 							],
 							"path": [
-								"1"
+								""
 							]
 						}
 					},
@@ -667,8 +663,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Albums",
@@ -754,12 +749,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{url}}album/5da057692cc94c5c29967bff",
+							"raw": "{{url}}album/6051cfc6e25248a215dcb833",
 							"host": [
 								"{{url}}album"
 							],
 							"path": [
-								"5da057692cc94c5c29967bff"
+								"6051cfc6e25248a215dcb833"
 							]
 						}
 					},
@@ -777,12 +772,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{url}}albums/5da056eb2cc94c5c29967bfe",
+							"raw": "{{url}}albums/",
 							"host": [
 								"{{url}}albums"
 							],
 							"path": [
-								"5da056eb2cc94c5c29967bfe"
+								""
 							]
 						}
 					},
@@ -943,8 +938,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Songs",
@@ -1053,12 +1047,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{url}}songs/5da057692cc94c5c29967bff",
+							"raw": "{{url}}songs/",
 							"host": [
 								"{{url}}songs"
 							],
 							"path": [
-								"5da057692cc94c5c29967bff"
+								""
 							]
 						}
 					},
@@ -1223,21 +1217,41 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Collectives",
-			"item": [],
-			"protocolProfileBehavior": {}
+			"item": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	],
 	"variable": [
 		{
-			"id": "dee81151-b047-40fb-b826-9b1ae1762b83",
-			"key": "URL",
-			"value": "http://localhost:8000/api"
+			"key": "url",
+			"value": "http://localhost:8000/api/"
+		},
+		{
+			"key": "auth",
+			"value": "JWT Token"
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }
